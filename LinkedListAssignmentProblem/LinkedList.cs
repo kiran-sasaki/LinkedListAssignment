@@ -29,7 +29,7 @@ namespace LinkedListAssignmentProblem
                 temp.next = node;
             }
         }
-        //Display Method For Displaying The node
+        //Display Method For Displaying value of The node
         public void Display()
         {
             Node<T> temp = this.head;
