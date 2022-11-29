@@ -56,5 +56,37 @@ namespace LinkedListAssignmentProblem
                 temp = temp.next;
             }
         }
+        //Method For Adding value of The node at a particular position
+        public void AddingAtParticularPosition(int position, T data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+            if (position == 1)
+            {
+                var newNode = new Node<T>(data);
+                newNode.next = this.head;
+                this.head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node<T> node = new Node<T>(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+
+                }
+                if (position != 1)
+                    Console.WriteLine("Position Out of range");
+            }
+            Console.WriteLine("the Inserted Value is " + data);
+        }
     }
 }
