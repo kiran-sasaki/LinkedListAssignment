@@ -100,5 +100,25 @@ namespace LinkedListAssignmentProblem
             Console.WriteLine("Removed the First Value");
             return this.head;
         }
+        //Method For Removing The Last node
+        public Node<T> RemoveLastNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            if (head.next == null)
+            {
+                return null;
+            }
+            Node<T> NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+            Console.WriteLine("Removed the Last Value");
+            return head;
+        }
     }
 }
